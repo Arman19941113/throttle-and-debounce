@@ -36,11 +36,11 @@ window.addEventListener('popstate', debouncedListener.cancel)
 
 ```typescript jsx
 import { defineComponent } from 'vue'
-import { throttle } from 'throttle-and-debounce'
+import { throttle, Callback } from 'throttle-and-debounce'
 
 export default defineComponent({
     setup () {
-        const callback = function (eventParam, ...params) { console.log(eventParam, ...params) }
+        const callback: Callback = function (eventParam, ...params) { console.log(eventParam, ...params) }
         const throttledListener = throttle(callback, 300, 'Hello', 'World') 
         return () => (
             <div style="height:500px;overflow:auto;" onScroll={throttledListener}>

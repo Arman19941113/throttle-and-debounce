@@ -13,4 +13,4 @@ interface Debounce {
 }
 declare const throttle: Throttle;
 declare const debounce: Debounce;
-export { throttle, debounce, };
+export { throttle, debounce, Callback, Listener, Throttle, Debounce, };

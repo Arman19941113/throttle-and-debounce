@@ -58,4 +58,8 @@ const debounce: Debounce = function (callback, wait = 300, ...params) {
 export {
     throttle,
     debounce,
+    Callback,
+    Listener,
+    Throttle,
+    Debounce,
 }
