@@ -1,0 +1,19 @@
+{
+    "name": "throttle-and-debounce",
+    "version": "2.0.0",
+    "description": "Throttle and debounce javascript function",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "keywords": ["js", "throttle", "debounce"],
+    "scripts": {
+        "build": "tsc -p src -outdir lib -d"
+    },
+    "repository": "https://github.com/Arman19941113/throttle-and-debounce",
+    "homepage": "https://github.com/Arman19941113/throttle-and-debounce#readme",
+    "bugs": {
+        "url": "https://github.com/Arman19941113/throttle-and-debounce/issues",
+        "email": "td19941113@gmail.com"
+    },
+    "author": "Arman",
+    "license": "MIT"
+}
