@@ -1,6 +1,6 @@
 {
     "name": "throttle-and-debounce",
-    "version": "2.0.2",
+    "version": "2.0.3",
     "description": "Throttle and debounce javascript function",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",

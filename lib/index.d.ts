@@ -1,8 +1,8 @@
 interface Callback {
-    (eventParam: Event, ...params: any[]): void;
+    (eventParam: Event | MouseEvent | InputEvent, ...params: any[]): void;
 }
 interface Listener {
-    (eventParam: Event): void;
+    (eventParam: Event | MouseEvent | InputEvent): void;
     cancel: () => void;
 }
 interface Throttle {
