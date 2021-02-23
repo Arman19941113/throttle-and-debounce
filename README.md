@@ -13,11 +13,11 @@ yarn add throttle-and-debounce
 ### throttle
 
 ```typescript
-import { throttle, Callback } from 'throttle-and-debounce'
+import { throttle } from 'throttle-and-debounce'
 
 const app = document.getElementById('app') as HTMLElement
 
-const throttledCallback: Callback = function (this: HTMLElement, eventParam, ...params) {
+const throttledCallback = function (this: HTMLElement, eventParam: WheelEvent, ...params: any[]) {
     console.log(this, eventParam, params)
 }
 const throttledListener = throttle(throttledCallback, 300, 'Hello', 'throttle')
@@ -28,11 +28,11 @@ app.addEventListener('scroll', throttledListener)
 ### debounce
 
 ```typescript
-import { throttle, Callback } from 'throttle-and-debounce'
+import { debounce } from 'throttle-and-debounce'
 
 const app = document.getElementById('app') as HTMLElement
 
-const debouncedCallback: Callback = function (this: HTMLElement, eventParam, ...params) {
+const debouncedCallback = function (this: HTMLElement, eventParam: MouseEvent, ...params: any[]) {
     console.log(this, eventParam, params)
 }
 const debouncedListener = debounce(debouncedCallback, 300, 'Hello', 'debounce')
@@ -44,11 +44,11 @@ app.addEventListener('click', debouncedListener)
 
 ```typescript jsx
 import { defineComponent } from 'vue'
-import { throttle, Callback } from 'throttle-and-debounce'
+import { throttle } from 'throttle-and-debounce'
 
 export default defineComponent({
     setup () {
-        const throttledCallback: Callback = function (this: undefined ,eventParam, ...params) {
+        const throttledCallback = function (this: undefined ,eventParam: WheelEvent, ...params: any[]) {
             console.log(this, eventParam, ...params)
         }
         const throttledListener = throttle(throttledCallback, 300, 'Hello', 'throttle') 
