@@ -15,13 +15,13 @@ const throttle: Throttle = function (callback, wait = 300, ...params) {
     let timer = 0
     const listener: Listener = function (this: void, eventParam) {
         if (timer) return
-        timer = setTimeout(() => {
+        timer = window.setTimeout(() => {
             timer = 0
             callback.call(this, eventParam, ...params)
         }, wait)
     }
     listener.cancel = function () {
-        timer && clearTimeout(timer)
+        timer && window.clearTimeout(timer)
         timer = 0
     }
     return listener
@@ -32,12 +32,12 @@ const throttleImmediately: Throttle = function (callback, wait = 300, ...params)
     const listener: Listener = function (this: void, eventParam) {
         if (timer) return
         callback.call(this, eventParam, ...params)
-        timer = setTimeout(() => {
+        timer = window.setTimeout(() => {
             timer = 0
         }, wait)
     }
     listener.cancel = function () {
-        timer && clearTimeout(timer)
+        timer && window.clearTimeout(timer)
         timer = 0
     }
     return listener
@@ -46,14 +46,14 @@ const throttleImmediately: Throttle = function (callback, wait = 300, ...params)
 const debounce: Debounce = function (callback, wait = 300, ...params) {
     let timer = 0
     const listener: Listener = function (this: void, eventParam) {
-        timer && clearTimeout(timer)
-        timer = setTimeout(() => {
+        timer && window.clearTimeout(timer)
+        timer = window.setTimeout(() => {
             timer = 0
             callback.call(this, eventParam, ...params)
         }, wait)
     }
     listener.cancel = function () {
-        timer && clearTimeout(timer)
+        timer && window.clearTimeout(timer)
         timer = 0
     }
     return listener
