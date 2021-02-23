@@ -9,5 +9,6 @@ interface Debounce {
     <T extends (...args: any) => any>(callback: T, wait?: number, ...params: any[]): Listener;
 }
 declare const throttle: Throttle;
+declare const throttleImmediately: Throttle;
 declare const debounce: Debounce;
-export { throttle, debounce, Listener, Throttle, Debounce, };
+export { throttle, throttleImmediately, debounce, Listener, Throttle, Debounce, };

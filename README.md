@@ -14,6 +14,8 @@ yarn add throttle-and-debounce
 
 ```typescript
 import { throttle } from 'throttle-and-debounce'
+// You can also import throttleImmediately to execute the callback immediately
+// import { throttleImmediately } from 'throttle-and-debounce'
 
 const app = document.getElementById('app') as HTMLElement
 

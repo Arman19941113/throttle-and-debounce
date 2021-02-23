@@ -27,6 +27,22 @@ const throttle: Throttle = function (callback, wait = 300, ...params) {
     return listener
 }
 
+const throttleImmediately: Throttle = function (callback, wait = 300, ...params) {
+    let timer = 0
+    const listener: Listener = function (this: void, eventParam) {
+        if (timer) return
+        callback.call(this, eventParam, ...params)
+        timer = setTimeout(() => {
+            timer = 0
+        }, wait)
+    }
+    listener.cancel = function () {
+        timer && clearTimeout(timer)
+        timer = 0
+    }
+    return listener
+}
+
 const debounce: Debounce = function (callback, wait = 300, ...params) {
     let timer = 0
     const listener: Listener = function (this: void, eventParam) {
@@ -45,6 +61,7 @@ const debounce: Debounce = function (callback, wait = 300, ...params) {
 
 export {
     throttle,
+    throttleImmediately,
     debounce,
     Listener,
     Throttle,
